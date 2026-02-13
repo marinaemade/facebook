@@ -15,56 +15,56 @@
                 <h1>Create Account</h1>
             </div>
             <div class="bg-white p-4">
-                <form action="">
+                <form onsubmit="return validateForm()" action="home.html">
                     <div class="row">
                         <div class="col-md-6 my-3">
-                            <label for="exampleFormControlInput1" class="form-label text-primary fw-bold">First Name :</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your first name">
+                            <label for="exampleFormControlInput1" class="firstNameLabel form-label text-primary fw-bold">First Name :</label>
+                            <input type="text" class="form-control firstNameInput" placeholder="Enter your first name">
                         </div>
                         <div class="col-md-6 my-3">
-                            <label for="exampleFormControlInput1" class="form-label text-primary fw-bold">Last Name :</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your last name">
+                            <label for="exampleFormControlInput1" class="lastNameLabel form-label text-primary fw-bold">Last Name :</label>
+                            <input type="text" class="form-control lastNameInput" placeholder="Enter your last name">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 my-3">
-                            <label for="exampleFormControlInput1" class="form-label text-primary fw-bold">Email:</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your email">
+                            <label for="exampleFormControlInput1" class="emailLabel form-label text-primary fw-bold">Email:</label>
+                            <input type="email" class="form-control emailInput" placeholder="Enter your email">
                         </div>
                         <div class="col-md-6 my-3">
-                            <label for="exampleFormControlInput1" class="form-label text-primary fw-bold">Phone Number :</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your phone number">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 my-3">
-                            <label for="exampleFormControlInput1" class="form-label text-primary fw-bold">Password :</label>
-                            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Enter your password">
-                        </div>
-                        <div class="col-md-6 my-3">
-                            <label for="exampleFormControlInput1" class="form-label text-primary fw-bold">Confirm Password :</label>
-                            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Confirm your password">
+                            <label for="exampleFormControlInput1" class="phoneLabel form-label text-primary fw-bold">Phone Number :</label>
+                            <input type="text" class="phoneInput form-control" placeholder="Enter your phone number">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 my-3">
-                            <label for="exampleFormControlInput1" class="form-label text-primary fw-bold">Gender :</label>
+                            <label for="exampleFormControlInput1" class="passLabel form-label text-primary fw-bold">Password :</label>
+                            <input type="password" class="passInput form-control" placeholder="Enter your password">
+                        </div>
+                        <div class="col-md-6 my-3">
+                            <label for="exampleFormControlInput1" class="confirmPassLabel form-label text-primary fw-bold">Confirm Password :</label>
+                            <input type="password" class="confirmPassInput form-control" placeholder="Confirm your password">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <label for="exampleFormControlInput1" class="genderLabel form-label text-primary fw-bold">Gender :</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+                                <input class="maleCheck form-check-input" type="radio" name="radioDefault">
                                 <label class="form-check-label" for="radioDefault1">
                                     Male
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+                                <input class="femaleCheck form-check-input" type="radio" name="radioDefault">
                                 <label class="form-check-label" for="radioDefault1">
                                     Female
                                 </label>
                             </div>
                         </div>
                         <div class="col-md-6 my-3">
-                            <label for="exampleFormControlInput1" class="form-label text-primary fw-bold">Birthdate :</label>
-                            <input type="date" class="form-control" id="birthdate" name="birthdate">
+                            <label for="exampleFormControlInput1" class="dateLabel form-label text-primary fw-bold">Birthdate :</label>
+                            <input type="date" class="dateInput form-control" id="birthdate" name="birthdate">
                         </div>
                     </div>
                     <div class="col-md-6 my-3">
@@ -77,4 +77,5 @@
     </div>
     
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
 </body>
