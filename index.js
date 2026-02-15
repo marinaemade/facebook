@@ -17,101 +17,85 @@ var femaleCheck = document.querySelector('.femaleCheck');
 console.log(maleCheck); // maleCheck.checked=true;
 var dateLabel = document.querySelector('.dateLabel');
 var dateInput = document.querySelector('.dateInput')
-console.log(dateInput);
 
+// Refactored Functions :
+function replaceColor(labelName){
+    labelName.classList.replace('text-primary','text-danger')
+    return false;
+}
 
-// Functions :
+function backToNormal(labelName,text){
+    labelName.innerHTML= text;
+    labelName.classList.replace('text-danger','text-primary');
+    return true;
+}
+
+// Main Functions :
 function validateFirstName(){
     if (firstNameInput.value.length <=2 || firstNameInput.value.includes(' ')  ) {
         firstNameLabel.innerHTML= 'Please enter a valid username!';
-        firstNameLabel.classList.replace('text-primary','text-danger')
-        return false;
+        return replaceColor(firstNameLabel);
     }else{
-        firstNameLabel.innerHTML= 'First Name:';
-        firstNameLabel.classList.replace('text-danger','text-primary')
-        return true;
+        return backToNormal(firstNameLabel,'First Name: ');
     }
 }
 function validateLastName(){
     if (lastNameInput.value.length <=2 || lastNameInput.value.includes(' ')  ) {
         lastNameLabel.innerHTML= 'Please enter a valid username!';
-        lastNameLabel.classList.replace('text-primary','text-danger')
-        return false;
+        return replaceColor(lastNameLabel);
     }else{
-        lastNameLabel.innerHTML= 'Last Name:';
-        lastNameLabel.classList.replace('text-danger','text-primary')
-        return true;
+        return backToNormal(lastNameLabel,'Last Name:')
     }
 }
 function validateEmail() {
     if (emailInput.value.includes(' ') || emailInput.value== "") {
         emailLabel.innerHTML= 'Please enter a valid email!';
-        emailLabel.classList.replace('text-primary','text-danger')
-        return false;
+        return replaceColor(emailLabel);
     }else{
-        emailLabel.innerHTML= 'Email:';
-        emailLabel.classList.replace('text-danger','text-primary');
-        return true;
+        return backToNormal(emailLabel,'Email :');
     }
 }
 function validatePhone() {
     if (phoneInput.value === "" || isNaN(phoneInput.value) ) {
         phoneLabel.innerHTML= 'Please enter a valid phone!';
-        phoneLabel.classList.replace('text-primary','text-danger')
-        return false;
+        return replaceColor(phoneLabel);
     }else{
-        phoneLabel.innerHTML= 'Phone:';
-        phoneLabel.classList.replace('text-danger','text-primary');
-        return true;
+        return backToNormal(phoneLabel,'Phone :');
     }
 }
 function validatePassword() {
     if (passInput.value.includes(' ') || passInput.value== ""|| !passInput.value.includes('!') ) {
         passLabel.innerHTML= 'Please enter a valid password including(!)';
-        passLabel.classList.replace('text-primary','text-danger')
-        return false;
+        return replaceColor(passLabel);
     }else{
-        passLabel.innerHTML= 'Password:';
-        passLabel.classList.replace('text-danger','text-primary');
-        return true;
+        return backToNormal(passLabel,'Password :');
     }
 }
 function validateConfirmPassword() {
     if (confirmPassInput.value !== passInput.value) {
         confirmPassLabel.innerHTML = 'Passwords do not match!';
-        confirmPassLabel.classList.replace('text-primary','text-danger');
-        return false;
+        return replaceColor(confirmPassLabel);
     } else {
-        confirmPassLabel.innerHTML = 'Confirm Password :';
-        confirmPassLabel.classList.replace('text-danger','text-primary');
-        return true;
+        return backToNormal(confirmPassLabel,'Confirm Password :');
     }
 }
 function checkGender() {
     if (maleCheck.checked==false && femaleCheck.checked==false) {
         genderLabel.innerHTML = 'Please select a gender';
-        genderLabel.classList.replace('text-primary','text-danger');
-        return false;
+        return replaceColor(genderLabel);
     } else {
-        genderLabel.innerHTML = 'Gender :';
-        genderLabel.classList.replace('text-danger','text-primary');
-        return true;
+        return backToNormal(genderLabel,'Gender :');
     }
 }
 function checkDate() {
     if (dateInput.value === "") {
         dateLabel.innerHTML = 'Please select a date';
-        dateLabel.classList.replace('text-primary','text-danger');
-        return false;
+        return replaceColor(dateLabel);
     } else {
-        dateLabel.innerHTML = 'Date :';
-        dateLabel.classList.replace('text-danger','text-primary');
-        return true;
+        return backToNormal(dateLabel,'Date :');
     }
 }
 function validateForm() {
     return validateFirstName() && validateLastName() && validateEmail() &&
         validatePhone() && validatePassword() && validateConfirmPassword() && checkGender() && checkDate();
 }
-
-
